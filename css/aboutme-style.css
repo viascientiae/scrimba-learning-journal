@@ -1,0 +1,270 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;      
+  /* border: 1px solid red; */
+}
+
+html, 
+body {
+    margin: 0 auto;
+    padding: 0;
+    min-width: 480px;
+    max-width: 1400px;
+    
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+/* TYPOGRAPHY */
+
+h1 {
+    font-size: 3vh;
+}
+
+.site-header a {
+    font-size: 2vh;
+    text-decoration: none;
+    font-weight: 700;
+    color: black;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+h2 {
+    font-size: 3vh;
+    margin: 0;
+}
+
+.hero-section p {
+  margin: 0;
+  font-size: 1.75vh;
+  color: white;
+}
+
+.hero-section .date {
+    text-transform: uppercase;
+    font-size: 1.85vh;
+    font-weight: 700;
+}
+
+h3,
+.blogs-gallery-post p {
+    margin: 0;
+    padding: 0;
+}
+
+h3 {
+  font-size: 2.5vh;
+  color: #202020;
+}
+
+h4 {
+    font-size: 2vh;
+    text-align: center;
+}
+
+.blogs-gallery-post p {
+  color: slategray;
+  font-size: 2vh;
+}
+
+.blogs-gallery-post .date {
+  text-transform: uppercase;
+}
+
+.content-container {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* HEADER LAYOUT */
+
+.site-header {
+    height: 8vh;
+    align-self: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.site-header .content-container {
+    padding: 0 1em;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.site-header nav {
+    margin-left: auto;
+}
+
+.site-header ul {
+  list-style-type: none;
+  
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1em;
+}
+
+/* MAIN SECTION - ABOUT ME SECTION LAYOUT */
+
+.section-about-me {
+    margin: 0 auto;
+    padding: 2vh 2vw;
+}
+
+.section-about-me-introduction {
+  margin: 1vh auto;
+  padding: 1vh 1vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5vh 5vw ;
+}
+
+.section-about-me-introduction-picture {
+  width: 182px;
+  height: 182px;
+  border-radius: 50%;
+}
+
+.section-about-me-text {
+    margin: 0 auto;
+    padding: 2vh 5vw;
+}
+
+/* MAIN SECTION - BLOGS GALLERY LAYOUT */
+
+.blogs-gallery {
+    margin: 0 auto;
+    
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+}
+
+.blogs-gallery-post {
+    margin: 0 auto;
+    
+    height: 60vh;
+    width: 90vw;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1vh;
+}
+
+.blogs-gallery-post img {
+    display: block;
+    object-fit: cover;
+    
+    width: 100%;
+    height: 60%;
+    margin: 0 auto;
+    
+    order: -2;
+}
+
+.blogs-gallery-post .date {
+    order: -1;
+}
+
+/* FOOTER SECTION LAYOUT  */ 
+
+.site-footer {
+    height: 8vh;
+    
+    background-color: #202020;
+    color: white;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.site-footer p {
+    margin: 0;
+}
+
+/* MEDIA QUERIES */
+
+@media (min-width: 576px) {
+    
+    .site-main {
+        grid-template-rows: 1fr 4fr;
+    }
+    
+    /* MAIN SECTION - BLOGS GALLERY LAYOUT */
+
+    .blogs-gallery {
+        margin: 0 auto;
+        grid-template-columns: 1fr 1fr;
+        gap: 0 2vw;
+    }
+
+    .blogs-gallery-post {
+        width: 45vw;
+        gap: 1vh 0;
+    }
+
+}
+
+@media (min-width: 768px) {
+    
+    .site-main {
+        grid-template-rows: 1fr 3fr;
+    }
+    
+    .section-about-me-introduction {
+      flex-direction: row;
+      gap: 2vh 2vw ;
+     }
+    
+    /* MAIN SECTION - BLOGS GALLERY LAYOUT */
+
+    .blogs-gallery {
+        margin: 0 auto;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 0 2vw;
+    }
+
+    .blogs-gallery-post {
+        width: 30vw;
+        gap: 1vh 0;
+    }
+
+}
+
+@media (min-width: 992px) {
+    
+    .site-main {
+        grid-template-rows: 2fr 7fr;
+    }
+    /* MAIN SECTION - BLOGS GALLERY LAYOUT */
+
+    .section-about-me-introduction {
+      flex-direction: row;
+      gap: 1vh 1vw ;
+     }
+
+    .blogs-gallery {
+        margin: 0 auto;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 0 2vw;
+    }
+
+    .blogs-gallery-post {
+        max-width: 300px;
+        width: 30vw;
+        gap: 1vh 0;
+    }
+
+}

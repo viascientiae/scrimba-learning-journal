@@ -1,0 +1,300 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;      
+  /* border: 1px solid red; */
+}
+
+html, 
+body {
+    margin: 0 auto;
+    padding: 0;
+    min-width: 480px;
+    max-width: 1400px;
+    
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+/* TYPOGRAPHY */
+
+h1 {
+    font-size: 3vh;
+}
+
+.site-header a {
+    font-size: 2vh;
+    text-decoration: none;
+    font-weight: 700;
+    color: black;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+h2 {
+    font-size: 4vh;
+    margin: 0;
+    color: white;
+}
+
+.hero-section p {
+  margin: 0;
+  font-size: 1.75vh;
+  color: white;
+}
+
+.hero-section .date {
+    text-transform: uppercase;
+    font-size: 1.85vh;
+    font-weight: 700;
+}
+
+h3,
+.blogs-gallery-post p {
+    margin: 0;
+    padding: 0;
+}
+
+h3 {
+  font-size: 3vh;
+  color: #202020;
+}
+
+.blogs-gallery-post p {
+  color: slategray;
+  font-size: 2vh;
+}
+
+.blogs-gallery-post .date {
+  text-transform: uppercase;
+}
+
+.content-container {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* SITE LAYOUT */
+
+body {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 8vh 10fr 8vh;
+    grid-template-areas:
+    "h"
+    "m"
+    "f";
+}
+
+.site-header {
+  grid-area: h;
+}
+
+.site-main {
+  grid-area: m;
+}
+
+.site-footer {
+  grid-area: f;
+}
+
+/* HEADER LAYOUT */
+
+.site-header {
+    height: 8vh;
+    align-self: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.site-header .content-container {
+    padding: 0 1em;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.site-header nav {
+    margin-left: auto;
+}
+
+.site-header ul {
+  list-style-type: none;
+  
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1em;
+}
+
+/* MAIN SECTION LAYOUT */
+
+.site-main {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 9fr;
+  grid-template-areas: 
+  "hs"
+  "bg";
+  gap: 0;
+}
+
+.hero-section {
+  grid-area: hs; 
+}
+
+.blogs-gallery {
+  grid-area: bg;
+}
+
+/* MAIN SECTION - HERO SECTION LAYOUT */
+
+.hero-section {    
+    background-image: url(/images/hero-bg.jpg);
+    background-position: center;
+    background-size: cover;
+    max-width: 1200;
+    margin: 0 auto;
+    display: flex;
+}
+
+.hero-section .content-container {
+    width: 90%;
+ 
+    padding: 1em;   
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.date {
+    order: -1;
+}
+
+/* MAIN SECTION - BLOGS GALLERY LAYOUT */
+
+.blogs-gallery {
+    margin: 0 auto;
+    
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+}
+
+.blogs-gallery-post {
+    margin: 0;
+    
+    height: 60vh;
+    width: 90vw;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1vh;
+}
+
+.blogs-gallery-post img {
+    display: block;
+    object-fit: cover;
+    
+    width: 100%;
+    height: 60%;
+    margin: 0 auto;
+    
+    order: -2;
+}
+
+.blogs-gallery-post .date {
+    order: -1;
+}
+
+/* FOOTER SECTION LAYOUT  */ 
+
+.site-footer {
+    background-color: #202020;
+    color: white;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.site-footer p {
+    margin: 0;
+}
+
+/* MEDIA QUERIES */
+
+@media (min-width: 576px) {
+    
+    .site-main {
+        grid-template-rows: 1fr 4fr;
+    }
+    
+    /* MAIN SECTION - BLOGS GALLERY LAYOUT */
+
+    .blogs-gallery {
+        margin: 0 auto;
+        grid-template-columns: 1fr 1fr;
+        gap: 0 2vw;
+    }
+
+    .blogs-gallery-post {
+        width: 45vw;
+        gap: 1vh 0;
+    }
+
+}
+
+@media (min-width: 768px) {
+    
+    .site-main {
+        grid-template-rows: 1fr 3fr;
+    }
+    
+    /* MAIN SECTION - BLOGS GALLERY LAYOUT */
+
+    .blogs-gallery {
+        margin: 0 auto;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 0 2vw;
+    }
+
+    .blogs-gallery-post {
+        width: 30vw;
+        gap: 1vh 0;
+    }
+
+}
+
+@media (min-width: 992px) {
+    
+    .site-main {
+        grid-template-rows: 2fr 7fr;
+    }
+    /* MAIN SECTION - BLOGS GALLERY LAYOUT */
+
+    .blogs-gallery {
+        margin: 0 auto;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 0 2vw;
+    }
+
+    .blogs-gallery-post {
+        max-width: 300px;
+        width: 30vw;
+        gap: 1vh 0;
+    }
+
+}
